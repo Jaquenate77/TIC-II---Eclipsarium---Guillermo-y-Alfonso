@@ -1,0 +1,252 @@
+/*
+ * Archivo: estilos_completos.css (Header, Progreso y Footer con Volumen)
+ * Proyecto: Eclipsarium (TIC II)
+ * Autores: Guillermo y Alfonso
+ */
+
+:root {
+    --color-fondo-oscuro: #0B0C10;
+    --color-header-bg: rgba(31, 40, 51, 0.95);
+    --color-acento: #F5A623; 
+    --color-texto: #C5C6C7;
+    --color-blanco: #FFFFFF;
+}
+
+/* === PARA PRUEBAS === */
+body {
+    margin: 0;
+    background-color: var(--color-fondo-oscuro);
+    min-height: 200vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* === BARRA DE PROGRESO DE LECTURA === */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: var(--color-acento);
+    z-index: 10000;
+    box-shadow: 0 0 10px var(--color-acento);
+}
+
+@supports (animation-timeline: scroll()) {
+    .scroll-progress {
+        animation: progress-grow linear forwards;
+        animation-timeline: scroll(root);
+    }
+}
+
+@keyframes progress-grow {
+    to { width: 100%; }
+}
+
+/* === ESTRUCTURA DEL ENCABEZADO === */
+.header-eclipsarium {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+@supports (animation-timeline: scroll()) {
+    .header-eclipsarium {
+        animation: descuelgue-header linear forwards;
+        animation-timeline: scroll(root);
+        animation-range: 0 150px;
+    }
+}
+
+.header-eclipsarium .logo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(245, 166, 35, 0.4);
+    margin: 0;
+}
+
+.header-eclipsarium .logo span {
+    color: var(--color-acento);
+}
+
+.header-eclipsarium .nav-botones {
+    display: flex;
+    gap: 20px; 
+}
+
+.header-eclipsarium .btn-nav {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: transparent;
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease; 
+}
+
+.header-eclipsarium .btn-nav:hover {
+    color: var(--color-acento);
+    border-color: var(--color-acento);
+    background-color: rgba(245, 166, 35, 0.1);
+    box-shadow: 0 0 15px rgba(245, 166, 35, 0.2);
+}
+
+@keyframes descuelgue-header {
+    from {
+        width: 100%;
+        top: 0;
+        border-radius: 0;
+        background-color: var(--color-header-bg);
+        border: 1px solid transparent;
+    }
+    to {
+        width: 75%; 
+        top: 25px;  
+        border-radius: 40px; 
+        background-color: rgba(31, 40, 51, 0.75); 
+        backdrop-filter: blur(12px); 
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8); 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* =========================================
+   === FOOTER CON VOLUMEN Y EFECTO ECLIPSE === 
+   ========================================= */
+
+.footer-eclipsarium {
+    position: relative; /* Necesario para el resplandor superior */
+    
+    /* 1. Eliminamos el fondo plano y ponemos un gradiente oscuro que simula profundidad */
+    background: linear-gradient(180deg, rgba(31, 40, 51, 0.95) 0%, #050608 100%);
+    color: var(--color-texto);
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: auto; 
+    
+    /* 2. Curvamos las esquinas superiores para quitar el aspecto de "caja rígida" */
+    border-radius: 40px 40px 0 0;
+    
+    /* 3. Doble sombra hacia arriba: una oscura para volumen, una amarilla sutil para el brillo */
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.6), 0 -2px 15px rgba(245, 166, 35, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 4. Resplandor central: usando un pseudo-elemento simulamos la corona solar asomando */
+.footer-eclipsarium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background-color: var(--color-acento);
+    box-shadow: 0 0 20px 5px rgba(245, 166, 35, 0.4);
+    border-radius: 0 0 10px 10px;
+}
+
+.footer-eclipsarium .footer-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-eclipsarium .footer-titulo {
+    font-size: 1.2rem;
+    color: var(--color-blanco);
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.footer-eclipsarium .redes-sociales {
+    display: flex;
+    gap: 30px; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* 5. Le damos un fondo tipo "píldora" a los botones para que no floten en la nada */
+.footer-eclipsarium .social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con efecto rebote */
+}
+
+.footer-eclipsarium .social-link img {
+    border-radius: 6px; 
+    transition: transform 0.3s ease;
+}
+
+/* Hover con "gracia": el botón se ilumina y flota hacia arriba separándose del fondo */
+.footer-eclipsarium .social-link:hover {
+    color: var(--color-blanco);
+    background-color: rgba(245, 166, 35, 0.1);
+    border-color: rgba(245, 166, 35, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.footer-eclipsarium .social-link:hover img {
+    transform: scale(1.2) rotate(5deg); /* Pequeña rotación dinámica al icono */
+}
+
+.footer-eclipsarium .footer-contacto {
+    margin-top: 15px;
+    padding-top: 25px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    width: 60%;
+}
+
+.footer-eclipsarium .footer-contacto p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.footer-eclipsarium .footer-contacto a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-eclipsarium .footer-contacto a:hover {
+    text-shadow: 0 0 10px rgba(245, 166, 35, 0.8);
+    color: var(--color-blanco);
+}
+
+.footer-eclipsarium .copyright {
+    font-size: 0.85rem;
+    opacity: 0.4; 
+    margin-top: 20px;
+}

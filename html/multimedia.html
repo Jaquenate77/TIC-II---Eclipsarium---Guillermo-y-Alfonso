@@ -3,30 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css_styles.css">
+    <link rel="stylesheet" href="../css/estilos_encabezado.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eclipsarium</title>
 </head>
 <body text="white" background="../resources/varios/background.png">
-        <header align="center">
-            <h1><a href="index.html">Eclipsarium</a></h1>
-        <hr align="center" width="100%">
-        <nav>    
-            <table align="center">
-                    <tr>
-                        <td>Conoce más sobre eclipsarium</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="index.html" >Inicio</a>|
-                            <a href="nexteclipses.html" >Próximos Eclipses</a>|
-                            <a href="multimedia.html" >Multimedia</a>|
-                            <a href="abtus.html" >Sobre Nosotros</a>|
-                            <a href="contactwus.html" >Contacto</a>|
-                        </td>
-                    </tr>
-            </table>
-        </nav>
-    </header>
+        <header class="header-eclipsarium">
+            <h1 class="logo">Eclips<span>arium</span></h1>
+            <nav class="nav-botones">
+                <a href="index.html" class="btn-nav">Inicio</a>
+                <a href="eclipses.html" class="btn-nav">Eclipses</a>
+                <a href="galeria.html" class="btn-nav">Galería</a>
+                <a href="nosotros.html" class="btn-nav">Nosotros</a>
+            </nav>
+        </header>
         <main>
             <section>
                 <table>
@@ -214,31 +204,27 @@
             </section>
         </main>
     <hr align="center" width="100%">
-    <footer>
-        <table align="center">
-            <tr>
-                <td>Síguenos en redes sociales:</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://www.facebook.com/eclipsarium" >Facebook
-                        <img src="../resources/varios/facebook_logo.png" alt="Facebook" width="20px" height="20" align="center">
-                    </a>|
-                    <a href="https://www.x.com/eclipsarium" >Twitter
-                        <img src="../resources/varios/x_logo.png" alt="Twitter" width="20px" height="20" align="center"">
-                    </a>|
-                    <a href="https://www.instagram.com/eclipsarium" >Instagram
-                        <img src="../resources/varios/ig_logo.jpeg" alt="Instagram" width="20px" height="20" align="center">
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Contact: <a href="mailto:contact@eclipsarium.es">contact@eclipsarium.es</a></td>
-            </tr>
-            <tr>
-                <td>&copy; 2026 Eclipsarium. All rights reserved.</td>
-            </tr>
-        </table>
+    <footer class="footer-eclipsarium">
+        <div class="footer-contenido">
+            <p class="footer-titulo">Síguenos en redes sociales:</p>
+            
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/eclipsarium" class="social-link">
+                    <img src="Resources/img/facebook_logo.png"  width="24" height="24"> Facebook
+                </a>
+                <a href="https://www.x.com/eclipsarium" class="social-link">
+                    <img src="Resources/img/x_logo.png"  width="24" height="24"> Twitter
+                </a>
+                <a href="https://www.instagram.com/eclipsarium" class="social-link">
+                    <img src="Resources/img/ig_logo.jpeg" width="24" height="24"> Instagram
+                </a>
+            </div>
+
+            <div class="footer-contacto">
+                <p>Contact: <a href="mailto:contact@eclipsarium.es">contact@eclipsarium.es</a></p>
+                <p class="copyright">&copy; 2026 Eclipsarium. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
