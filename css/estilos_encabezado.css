@@ -8,6 +8,10 @@
     --color-blanco: #FFFFFF;
 }
 
+.espacio_blanco{
+    display:flex;
+    min-height: 80px;
+}
 
 .scroll-progress {
     position: fixed;
