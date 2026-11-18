@@ -1,0 +1,8 @@
+.imagen {
+    transition: transform 4s;
+    border-radius: 6px
+}
+.imagen:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
