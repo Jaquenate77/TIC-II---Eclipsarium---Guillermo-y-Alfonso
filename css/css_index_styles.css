@@ -6,3 +6,29 @@
     transform: scale(1.1);
     cursor: pointer;
 }
+.contenedor1 {
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+}
+.contenedor2 {
+    display: flex;
+    position: sticky;
+    flex-wrap: wrap; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+}
+.contenedor3 {
+    display: flex;
+    position: sticky;
+    flex-wrap: wrap; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+}
+.item {
+    min-width: 500px;
+}
