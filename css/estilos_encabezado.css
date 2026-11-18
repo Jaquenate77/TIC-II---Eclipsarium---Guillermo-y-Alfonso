@@ -1,8 +1,4 @@
-/*
- * Archivo: estilos_completos.css (Header, Progreso y Footer con Volumen)
- * Proyecto: Eclipsarium (TIC II)
- * Autores: Guillermo y Alfonso
- */
+
 
 :root {
     --color-fondo-oscuro: #0B0C10;
@@ -12,16 +8,7 @@
     --color-blanco: #FFFFFF;
 }
 
-/* === PARA PRUEBAS === */
-body {
-    margin: 0;
-    background-color: var(--color-fondo-oscuro);
-    min-height: 200vh; 
-    display: flex;
-    flex-direction: column;
-}
 
-/* === BARRA DE PROGRESO DE LECTURA === */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -44,7 +31,6 @@ body {
     to { width: 100%; }
 }
 
-/* === ESTRUCTURA DEL ENCABEZADO === */
 .header-eclipsarium {
     position: fixed;
     top: 0;
@@ -127,10 +113,6 @@ body {
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
-
-/* =========================================
-   === FOOTER CON VOLUMEN Y EFECTO ECLIPSE === 
-   ========================================= */
 
 .footer-eclipsarium {
     position: relative; /* Necesario para el resplandor superior */
