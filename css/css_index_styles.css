@@ -32,3 +32,24 @@
 .item {
     min-width: 500px;
 }
+.titulo_seccion{
+    text-align: center;
+    font-size: 275%;
+    color: peru;
+    font-weight: bold;
+}
+.apartado{
+    text-align: left;
+    font-size: 150%;
+    color: tan;
+    font-weight: bold;
+}
+.subapartado{
+    text-align: left;
+    font-size: 125%;
+    color: khaki;
+    font-weight: bold;
+}
+.texto{
+
+}
