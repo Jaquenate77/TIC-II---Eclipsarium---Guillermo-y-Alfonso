@@ -1,18 +1,19 @@
-
-
+/* Variables de color globales de Eclipsarium. Si cambiamos un código aquí, cambia en toda la web */
 :root {
     --color-fondo-oscuro: #0B0C10;
     --color-header-bg: rgba(31, 40, 51, 0.95);
-    --color-acento: #F5A623; 
+    --color-acento: #F5A623; /* Dorado / ámbar tipo corona solar */
     --color-texto: #C5C6C7;
     --color-blanco: #FFFFFF;
 }
 
-.espacio_blanco{
-    display:flex;
+/* Caja invisible arriba del todo para que el header fijo no tape el principio de la página */
+.espacio_blanco {
+    display: flex;
     min-height: 80px;
 }
 
+/* BARRA DE PROGRESO SUPERIOR AL HACER SCROLL */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -20,10 +21,11 @@
     width: 0%;
     height: 4px;
     background-color: var(--color-acento);
-    z-index: 10000;
+    z-index: 10000; /* Por encima de todo, incluido el header */
     box-shadow: 0 0 10px var(--color-acento);
 }
 
+/* Comprueba si el navegador soporta animaciones ligadas al scroll antes de aplicarla, si lo hace se aplica la animación (keyframes)*/
 @supports (animation-timeline: scroll()) {
     .scroll-progress {
         animation: progress-grow linear forwards;
@@ -34,34 +36,34 @@
 @keyframes progress-grow {
     to { width: 100%; }
 }
-.contenedor-header{
+
+/* CABECERA Y MENÚ DE NAVEGACIÓN */
+.contenedor-header {
     display: flex;
     gap: 20px;
 }
+
 .header-eclipsarium {
-    position: fixed;
+    position: fixed; /* Se queda pegada arriba aunque bajemos */
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Junto con left: 50% nos sirve para centrar un elemento fixed */
     width: 100%;
     height: 80px;
-    background-color: var(--color-header-bg);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo a la izquierda, botones a la derecha */
     align-items: center;
-    padding: 0 50px;
     box-sizing: border-box;
     z-index: 9999;
-    transition: all 1s ease-out; 
     background: transparent;
     color: var(--color-texto);
     padding: 10px 26px;
     border-radius: 8px;
-    transition: all 0.3s ease
-
+    transition: all 0.3s ease;
 }
 
-.header-eclipsarium:hover{
+/* Efecto de expansión y brillo dorado al pasar el ratón por la cabecera */
+.header-eclipsarium:hover {
     padding: 50px 50px;
     border-radius: 8px;
     transition: all 0.6s ease; 
@@ -70,6 +72,7 @@
     box-shadow: 0 0 15px rgba(245, 166, 35, 0.2);
 }
 
+/* Engancha el efecto de redondeo después de bajar los primeros 150px de la página. Subirlo haría que la animación de redondeo se haga efectivo al bajar más */
 @supports (animation-timeline: scroll()) {
     .header-eclipsarium {
         animation: descuelgue-header linear forwards;
@@ -89,10 +92,12 @@
     margin: 0;
 }
 
+/* Pinta en dorado la segunda mitad del nombre "arium" */
 .header-eclipsarium .logo span {
     color: var(--color-acento);
 }
 
+/* Fila de enlaces de navegación con Flexbox */
 .header-eclipsarium .nav-botones {
     display: flex;
     gap: 20px; 
@@ -118,13 +123,14 @@
     box-shadow: 0 0 15px rgba(245, 166, 35, 0.2);
 }
 
+/* Animación que encoge el header al 75% de ancho y le aplica desenfoque de fondo para dar profundidad (blur) */
 @keyframes descuelgue-header {
     from {
         width: 100%;
         top: 0;
         border-radius: 0;
         background-color: var(--color-header-bg);
-        border: 1px solid transparent;
+        border: 1px solid transparent; /*Lo ponemos transparente para que esté ahí y lo podamos modificar después pero no se vea mientras no nos hace falta*/
     }
     to {
         width: 75%; 
@@ -137,28 +143,23 @@
     }
 }
 
+/* PIE DE PÁGINA (FOOTER) */
 .footer-eclipsarium {
-    position: relative; /* Necesario para el resplandor superior */
-    
-    /* 1. Eliminamos el fondo plano y ponemos un gradiente oscuro que simula profundidad */
+    position: relative; /* Necesario para colocar el brillo dorado superior con ::before */
     background: linear-gradient(180deg, rgba(31, 40, 51, 0.95) 0%, #050608 100%);
     color: var(--color-texto);
     padding: 50px 20px 30px 20px;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: auto; 
-    
-    /* 2. Curvamos las esquinas superiores para quitar el aspecto de "caja rígida" */
     border-radius: 40px 40px 0 0;
-    
-    /* 3. Doble sombra hacia arriba: una oscura para volumen, una amarilla sutil para el brillo */
     box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.6), 0 -2px 15px rgba(245, 166, 35, 0.15);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 4. Resplandor central: usando un pseudo-elemento simulamos la corona solar asomando */
-.footer-eclipsarium::before {
-    content: '';
+/* Línea luminosa dorada en el borde superior central simulando un eclipse */
+.footer-eclipsarium::before { /*Agrega un contenido ficticio justamente antes del footer sin tener que usar otra clase. Es como crear un párrafo vacío al que le damos la forma de la barra brillante*/
+    content: ''; /*Necesitamos poner un contenido vacio porque sino no se vería el pseudoelemento*/
     position: absolute;
     top: 0;
     left: 50%;
@@ -191,9 +192,10 @@
     gap: 30px; 
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Permite que bajen a otra fila si la pantalla es muy estrecha */
 }
 
-/* 5. Le damos un fondo tipo "píldora" a los botones para que no floten en la nada */
+/* Botones redondeados para cada red social */
 .footer-eclipsarium .social-link {
     display: flex;
     align-items: center;
@@ -206,25 +208,27 @@
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con efecto rebote */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /*Efecto de 'rodar'*/
 }
 
+/* Controlamos aquí el tamaño de los logos para no poner width/height en el HTML */
 .footer-eclipsarium .social-link img {
+    width: 24px;
+    height: 24px;
     border-radius: 6px; 
     transition: transform 0.3s ease;
 }
 
-/* Hover con "gracia": el botón se ilumina y flota hacia arriba separándose del fondo */
 .footer-eclipsarium .social-link:hover {
     color: var(--color-blanco);
     background-color: rgba(245, 166, 35, 0.1);
     border-color: rgba(245, 166, 35, 0.3);
-    transform: translateY(-6px);
+    transform: translateY(-6px); /* Sube ligeramente al pasar el ratón */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .footer-eclipsarium .social-link:hover img {
-    transform: scale(1.2) rotate(5deg); /* Pequeña rotación dinámica al icono */
+    transform: scale(1.2) rotate(5deg);
 }
 
 .footer-eclipsarium .footer-contacto {

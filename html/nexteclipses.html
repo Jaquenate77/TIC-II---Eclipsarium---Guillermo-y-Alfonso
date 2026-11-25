@@ -2,19 +2,28 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <!-- Vital para que las media queries funcionen en el móvil -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Ojo: cuando unifiquemos todo en estilos.css, habrá que dejar aquí solo ese enlace -->
         <link rel="stylesheet" href="../css/css_nexteclipses_styles.css">
         <link rel="stylesheet" href="../css/estilos_encabezado.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <title>Eclipsarium - Próximos Eclipses</title>
     </head>
     <body>
+        <!-- Caja vacía para compensar la altura del header fixed y que no tape el título -->
         <div class="espacio_blanco"></div>
+        
+        <!-- Barra superior naranja que marca el porcentaje de scroll -->
         <div class="scroll-progress"></div>
         
+        <!-- CABECERA Y MENÚ DE NAVEGACIÓN -->
         <header class="header-eclipsarium">
             <h1 class="logo">Eclips<span>arium</span></h1>
             <nav class="nav-botones">
                 <a href="../html/index.html" class="btn-nav">Inicio</a>
+                <!-- Clase 'active' marca en dorado la pestaña en la que estamos -->
                 <a href="../html/nexteclipses.html" class="btn-nav active">Eclipses</a>
                 <a href="../html/multimedia.html" class="btn-nav">Galería</a>
                 <a href="../html/abtus.html" class="btn-nav">Nosotros</a>
@@ -22,59 +31,75 @@
             </nav>
         </header>
     
+        <!-- CONTENEDOR PRINCIPAL (ancho máximo 1200px y centrado en pantalla) -->
         <div class="contenedor-principal">
+            
+            <!-- BLOQUE DE INTRODUCCIÓN: caja con borde izquierdo dorado (.intro-eclipses) -->
             <article class="intro-eclipses">
                 <h2>El futuro se oscurece: Los próximos grandes espectáculos celestes</h2>
-                <p><b>El cosmos no se detiene, y los mayores espectáculos de la naturaleza ya tienen fecha en nuestro calendario.</b><br> En <u>Eclipsarium</u> sabemos que presenciar un eclipse solar o lunar es una experiencia transformadora que requiere estar en el lugar adecuado y en el momento preciso. Para que no te pierdas ni un solo segundo de estos asombrosos alineamientos astronómicos, hemos preparado la guía de observación definitiva.</p>
-                <p class="sub-intro">Para ayudarte a planificar tu próxima aventura bajo la sombra de los astros, esta sección se divide en <b><i>dos herramientas fundamentales:</i></b></p>
+                <p><strong>El cosmos no se detiene, y los mayores espectáculos de la naturaleza ya tienen fecha en nuestro calendario.</strong><br> En <u>Eclipsarium</u> sabemos que presenciar un eclipse solar o lunar es una experiencia transformadora que requiere estar en el lugar adecuado y en el momento preciso. Para que no te pierdas ni un solo segundo de estos asombrosos alineamientos astronómicos, hemos preparado la guía de observación definitiva.</p>
+                <p class="sub-intro">Para ayudarte a planificar tu próxima aventura bajo la sombra de los astros, esta sección se divide en <strong><em>dos herramientas fundamentales:</em></strong></p>
             </article>
 
+            <!-- CUERPO DE HERRAMIENTAS: apila las tarjetas principales en vertical con Flexbox -->
             <main class="grid-herramientas">
-                <!-- Herramienta 1: Calendario -->
+                
+                <!-- TARJETA 1: CALENDARIO DE ECLIPSES -->
                 <section class="card-herramienta">
+                    <!-- 'open' hace que el desplegable salga abierto por defecto al cargar -->
                     <details open>
+                        <!-- Cabecera clicable del desplegable -->
                         <summary>
                             <span class="icon-summary">📅</span>
                             <h3>Calendario Oficial de Eclipses</h3>
                         </summary>
                         <p class="desc-card">Una lista detallada con las fechas, horarios exactos y zonas de visibilidad de los próximos eventos astronómicos que cambiarán el día por la noche.</p>
                         
+                        <!-- Contenedor Flexbox: pone Solares y Lunares en 2 columnas en PC y 1 en móvil -->
                         <div class="bloque-eclipses">
-                            <h4>Próximos Eclipses Solares</h4>
-                            <ul class="lista-eclipses">
-                                <li><strong>6 de Feb 2027 - Solar Anular:</strong> América del Sur, Oeste africano y Europa (Portugal y España).</li>
-                                <li><strong>2 de Ago 2027 - Solar Total:</strong> Sur de España (Andalucía), Norte de África y Medio Oriente.</li>
-                                <li><strong>26 de Ene 2028 - Solar Anular:</strong> América del Sur, Antártida y Península Ibérica (Parcial).</li>
-                                <li><strong>22 de Jul 2028 - Solar Total:</strong> Oceanía y sudeste Asiático.</li>
-                                <li><strong>14 de Ene 2029 - Solar Parcial:</strong> América del Norte y Centroamérica.</li>
-                                <li><strong>12 de Jun 2029 - Solar Parcial:</strong> Europa del Norte, Rusia, Canadá y EEUU.
-                                    <ol class="sub-lista">
-                                        <li>Reikiavik</li>
-                                        <li>Trondheim</li>
-                                        <li>Bergen</li>
-                                    </ol>
-                                </li>
-                                <li><strong>5 de Dic 2029 - Solar Parcial:</strong> Argentina, Chile (Tierra del Fuego) y Sur de Sudáfrica.</li>
-                                <li><strong>1 de Jun 2030 - Solar Anular:</strong> Asia, Europa y Norte de África.</li>
-                                <li><strong>25 de Nov 2030 - Solar Total:</strong> Antártida, Oceanía y Sur de África.</li>
-                            </ul>
+                            
+                            <!-- Columna izquierda: Eclipses Solares -->
+                            <div class="columna-eclipses">
+                                <h4>Próximos Eclipses Solares</h4>
+                                <ul class="lista-eclipses">
+                                    <li><strong>6 de Feb 2027 - Solar Anular:</strong> América del Sur, Oeste africano y Europa (Portugal y España).</li>
+                                    <li><strong>2 de Ago 2027 - Solar Total:</strong> Sur de España (Andalucía), Norte de África y Medio Oriente.</li>
+                                    <li><strong>26 de Ene 2028 - Solar Anular:</strong> América del Sur, Antártida y Península Ibérica (Parcial).</li>
+                                    <li><strong>22 de Jul 2028 - Solar Total:</strong> Oceanía y sudeste Asiático.</li>
+                                    <li><strong>14 de Ene 2029 - Solar Parcial:</strong> América del Norte y Centroamérica.</li>
+                                    <li><strong>12 de Jun 2029 - Solar Parcial:</strong> Europa del Norte, Rusia, Canadá y EEUU.
+                                        <!-- Sublista ordenada para las ciudades principales -->
+                                        <ol class="sub-lista">
+                                            <li>Reikiavik</li>
+                                            <li>Trondheim</li>
+                                            <li>Bergen</li>
+                                        </ol>
+                                    </li>
+                                    <li><strong>5 de Dic 2029 - Solar Parcial:</strong> Argentina, Chile (Tierra del Fuego) y Sur de Sudáfrica.</li>
+                                    <li><strong>1 de Jun 2030 - Solar Anular:</strong> Asia, Europa y Norte de África.</li>
+                                    <li><strong>25 de Nov 2030 - Solar Total:</strong> Antártida, Oceanía y Sur de África.</li>
+                                </ul>
+                            </div>
 
-                            <h4>Próximos Eclipses Lunares</h4>
-                            <ul class="lista-eclipses">
-                                <li><strong>20 de Feb 2027 - Lunar Penumbral:</strong> América, Este de Asia y Oceanía.</li>
-                                <li><strong>18 de Jul 2027 - Lunar Penumbral:</strong> América del Sur, Europa y África.</li>
-                                <li><strong>17 de Ago 2027 - Lunar Penumbral:</strong> Todo el planeta excepto América.</li>
-                                <li><strong>12 de Ene 2028 - Lunar Total:</strong> América del Norte, Europa y África.</li>
-                                <li><strong>6 de Jul 2028 - Lunar Parcial:</strong> América del Sur, Europa y África.</li>
-                                <li><strong>31 de Dic 2028 - Lunar Total:</strong> América del Norte, Europa y África.</li>
-                                <li><strong>26 de Jun 2029 - Lunar Parcial:</strong> América del Sur, Europa y África.</li>
-                                <li><strong>20 de Dic 2029 - Lunar Total:</strong> América del Norte, Europa y África.</li>
-                            </ul>
+                            <!-- Columna derecha: Eclipses Lunares -->
+                            <div class="columna-eclipses">
+                                <h4>Próximos Eclipses Lunares</h4>
+                                <ul class="lista-eclipses">
+                                    <li><strong>20 de Feb 2027 - Lunar Penumbral:</strong> América, Este de Asia y Oceanía.</li>
+                                    <li><strong>18 de Jul 2027 - Lunar Penumbral:</strong> América del Sur, Europa y África.</li>
+                                    <li><strong>17 de Ago 2027 - Lunar Penumbral:</strong> Todo el planeta excepto América.</li>
+                                    <li><strong>12 de Ene 2028 - Lunar Total:</strong> América del Norte, Europa y África.</li>
+                                    <li><strong>6 de Jul 2028 - Lunar Parcial:</strong> América del Sur, Europa y África.</li>
+                                    <li><strong>31 de Dic 2028 - Lunar Total:</strong> América del Norte, Europa y África.</li>
+                                    <li><strong>26 de Jun 2029 - Lunar Parcial:</strong> América del Sur, Europa y África.</li>
+                                    <li><strong>20 de Dic 2029 - Lunar Total:</strong> América del Norte, Europa y África.</li>
+                                </ul>
+                            </div>
                         </div>
                     </details>   
                 </section>
 
-                <!-- Herramienta 2: Pronóstico -->
+                <!-- TARJETA 2: PRONÓSTICO METEOROLÓGICO -->
                 <section class="card-herramienta">
                     <details open>
                         <summary>
@@ -83,7 +108,9 @@
                         </summary>
                         <p class="desc-card">Una tabla exclusiva con las probabilidades estadísticas de lluvia y nubosidad para cada fecha señalada, permitiéndote elegir el destino con los cielos más limpios.</p>
                         
+                        <!-- Div con overflow-x: auto para poder deslizar la tabla lateralmente en móvil -->
                         <div class="tabla-contenedor">
+                            <!-- Tabla de datos (permitida porque muestra datos tabulados, no maquetación) -->
                             <table class="tabla-estilizada">
                                 <thead>
                                     <tr>
@@ -97,14 +124,15 @@
                                     <tr>
                                         <td><strong>Solar Total</strong><br><span class="fecha-tabla">Ago 2027</span></td>
                                         <td>Tarifa / Cádiz, España</td>
-                                        <td><span class="badge verde">15%</span></td>
-                                        <td><span class="badge verde">5%</span></td>
+                                        <!-- 'etiqueta verde' y 'etiqueta amarillo' cambian el color de la etiqueta -->
+                                        <td><span class="etiqueta verde">15%</span></td>
+                                        <td><span class="etiqueta verde">5%</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Solar Anular</strong><br><span class="fecha-tabla">Ene 2028</span></td>
                                         <td>Sevilla, España</td>
-                                        <td><span class="badge amarillo">45%</span></td>
-                                        <td><span class="badge amarillo">30%</span></td>
+                                        <td><span class="etiqueta amarillo">45%</span></td>
+                                        <td><span class="etiqueta amarillo">30%</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Lunar Total</strong><br><span class="fecha-tabla">Jul 2028</span></td>
@@ -120,19 +148,21 @@
             </main>
         </div>
 
+        <!-- PIE DE PÁGINA (común en todas las pestañas) -->
         <footer class="footer-eclipsarium">
             <div class="footer-contenido">
                 <p class="footer-titulo">Síguenos en redes sociales:</p>
                 
+                <!-- Iconos con tamaño controlado desde CSS (.social-link img) -->
                 <div class="redes-sociales">
                     <a href="https://www.facebook.com/eclipsarium" class="social-link">
-                        <img src="../resources/varios/facebook_logo.png" width="24" height="24"> Facebook
+                        <img src="../resources/varios/facebook_logo.png" alt="Logo de Facebook"> Facebook
                     </a>
                     <a href="https://www.x.com/eclipsarium" class="social-link">
-                        <img src="../resources/varios/x_logo.png" width="24" height="24"> Twitter
+                        <img src="../resources/varios/x_logo.png" alt="Logo de X"> Twitter
                     </a>
                     <a href="https://www.instagram.com/eclipsarium" class="social-link">
-                        <img src="../resources/varios/ig_logo.jpeg" width="24" height="24"> Instagram
+                        <img src="../resources/varios/ig_logo.jpeg" alt="Logo de Instagram"> Instagram
                     </a>
                 </div>
 

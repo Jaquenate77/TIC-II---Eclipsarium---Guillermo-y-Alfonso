@@ -1,4 +1,21 @@
-* {
+/* Paleta extendida para la sección de Próximos Eclipses */
+:root {
+    --color-fondo-oscuro: #0B0C10;
+    --color-header-bg: rgba(31, 40, 51, 0.95);
+    --color-acento: #F5A623;
+    --color-texto: #C5C6C7;
+    --color-blanco: #FFFFFF;
+    --color-superficie: #1F2833;
+    --color-superficie-trans: rgba(31, 40, 51, 0.85); /* Fondo translúcido para dejar ver las estrellas */
+    --color-superficie-alt: #141A21; /* Fondo más oscuro para los elementos dentro de las tarjetas */
+    --color-texto-tenue: #8E9297;
+    --color-acento-suave: rgba(245, 166, 35, 0.12);
+    --color-acento-borde: rgba(245, 166, 35, 0.4);
+    --color-borde-sutil: rgba(255, 255, 255, 0.08);
+}
+
+/* Reseteo básico para que los márgenes y paddings no sumen ancho extra acumulado de otros atributos */
+* { /* el elemento "*" implica que afecta a TODO el código*/
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,183 +23,291 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image:url(../resources/varios/background.png);
-    color: #e2e8f0;
+    background-color: var(--color-fondo-oscuro);
+    background-image: url(../resources/varios/background.png);
+    background-attachment: fixed; /* Fija el fondo estrellado al hacer scroll */
+    color: var(--color-texto);
     line-height: 1.6;
 }
 
-.espacio_blanco {
-    height: 30px;
+/* Marca en dorado el botón de "Eclipses" en el menú superior */
+.header-eclipsarium .btn-nav.active {
+    color: var(--color-acento);
+    border-color: var(--color-acento);
+    background-color: var(--color-acento-suave);
 }
 
+/* Caja centrada que limita el ancho del contenido a 1200px */
 .contenedor-principal {
-    display: flexbox;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px 20px 60px 20px;
 }
 
+/* CAJA DE INTRODUCCIÓN SUPERIOR */
 .intro-eclipses {
-    background: linear-gradient(135deg, #3e3885 0%, #0f172a 100%);
-    border: 1px solid #fefefe;
-    padding: 30px;
-    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(31, 40, 51, 0.92) 0%, rgba(11, 12, 16, 0.95) 100%);
+    border: 1px solid var(--color-acento-borde);
+    border-left: 5px solid var(--color-acento); /* Franja dorada de acento a la izquierda */
+    padding: 35px;
+    border-radius: 16px;
     margin-bottom: 40px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 166, 35, 0.08);
+    backdrop-filter: blur(8px);
 }
 
 .intro-eclipses h2 {
-    color: #f8fafc;
-    font-size: 0.8cm;
+    color: var(--color-blanco);
+    font-size: 1.9rem;
     margin-bottom: 15px;
+    letter-spacing: 0.5px;
 }
 
 .intro-eclipses p {
-    color: #94a3b8;
-    margin-bottom: 10px;
+    color: var(--color-texto);
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.intro-eclipses u {
+    text-decoration-color: var(--color-acento);
+    text-underline-offset: 4px;
 }
 
 .intro-eclipses .sub-intro {
-    color: #c7d2fe;
+    color: var(--color-acento);
     font-weight: 500;
-    margin-top: 15px;
+    margin-top: 18px;
+    margin-bottom: 0;
 }
 
-/* Grid de Herramientas (Main) */
+/* CONTENEDOR DE LAS TARJETAS PRINCIPALES */
 .grid-herramientas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
-
-
-/* Tarjetas Estilo Glassmorphism / Modernas */
+/* Estilo común para las dos tarjetas (Calendario y Pronóstico) */
 .card-herramienta {
-    background: #111827;
-    border: 1px solid #1f2937;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    background-color: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-herramienta:hover {
-    border-color: #4f46e5;
+    border-color: var(--color-acento-borde);
     transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 15px rgba(245, 166, 35, 0.1);
 }
 
-/* Detalles y Summaries estilizados */
-details {
-    cursor: pointer;
-}
-
+/* DESPLEGABLES (<details> y <summary>) */
 details summary {
-    list-style: none;
+    list-style: none; /* Oculta la flecha gris por defecto en Firefox */
     display: flex;
     align-items: center;
-    gap: 12px;
-    outline: none;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none; /* Evita seleccionar el texto al hacer doble clic rápido */
+    padding-bottom: 5px;
 }
 
+/* Oculta la flecha gris por defecto en Chrome, Edge y Safari */
 details summary::-webkit-details-marker {
     display: none;
 }
 
+/* Crea nuestra propia flecha dorada a la derecha del título */
+details summary::after {/*After implica que es justamente después del summary. Es un pseudoelemento*/
+    content: '▼';
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--color-acento);
+    transition: transform 0.3s ease;
+}
+
+/* Gira la flecha 180 grados cuando el desplegable está abierto. Es como una estructura de if*/
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
 .icon-summary {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    background-color: var(--color-acento-suave);
+    border: 1px solid var(--color-acento-borde);
+    padding: 8px 12px;
+    border-radius: 10px;
 }
 
 details summary h3 {
-    color: #f8fafc;
-    font-size: 1.25rem;
+    color: var(--color-blanco);
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
 }
 
 .desc-card {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    margin: 15px 0 20px 0;
+    color: var(--color-texto-tenue);
+    font-size: 0.98rem;
+    margin: 15px 0 25px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--color-borde-sutil);
 }
 
-/* Listas de Eclipses */
+/* LISTAS DE ECLIPSES EN DOS COLUMNAS CON FLEXBOX */
+.bloque-eclipses {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben dos columnas de 450px, salta una debajo de la otra */
+    gap: 30px;
+}
+
+.columna-eclipses {
+    flex: 1 1 450px; /* Base de 450px por columna, repartiendo el espacio sobrante a partes iguales */
+}
+
 .bloque-eclipses h4 {
-    color: #818cf8;
-    font-size: 1.1rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #1f2937;
-    padding-bottom: 5px;
+    color: var(--color-acento);
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-acento-borde);
 }
 
 .lista-eclipses {
     list-style-type: none;
-    padding-left: 0;
 }
 
 .lista-eclipses li {
-    background: #1f2937;
-    padding: 10px 14px;
-    margin-bottom: 8px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    color: #cbd5e1;
+    background-color: var(--color-superficie-alt);
+    border: 1px solid var(--color-borde-sutil);
+    border-left: 3px solid transparent;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 0.94rem;
+    color: var(--color-texto);
+    transition: all 0.25s ease;
+}
+
+/* Al señalar un eclipse de la lista, se ilumina el borde izquierdo y se desplaza 4px hacia la derecha */
+.lista-eclipses li:hover {
+    border-left-color: var(--color-acento);
+    background-color: rgba(245, 166, 35, 0.06);
+    transform: translateX(4px);
 }
 
 .lista-eclipses li strong {
-    color: #ffffff;
+    color: var(--color-blanco);
 }
 
 .sub-lista {
-    margin-top: 6px;
-    margin-left: 20px;
-    color: #94a3b8;
+    margin-top: 8px;
+    margin-left: 22px;
+    color: var(--color-texto-tenue);
+    font-size: 0.88rem;
 }
 
-/* Tabla Estilizada */
+/* TABLA DE PRONÓSTICO METEOROLÓGICO */
 .tabla-contenedor {
-    overflow-x: auto;
-    margin-top: 15px;
+    overflow-x: auto; /* Permite scroll horizontal en pantallas estrechas sin romper la web. Optimización para móviles */
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--color-borde-sutil);
 }
 
 .tabla-estilizada {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .tabla-estilizada th {
-    background-color: #1f2937;
-    color: #f8fafc;
-    padding: 12px;
+    background-color: var(--color-superficie-alt);
+    color: var(--color-acento);
+    padding: 14px 16px;
     font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    border-bottom: 2px solid var(--color-acento-borde);
 }
 
 .tabla-estilizada td {
-    padding: 12px;
-    border-bottom: 1px solid #1f2937;
-    color: #cbd5e1;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-borde-sutil);
+    color: var(--color-texto);
+}
+
+.tabla-estilizada tbody tr {
+    background-color: rgba(11, 12, 16, 0.4);
+    transition: background-color 0.2s ease;
+}
+
+.tabla-estilizada tbody tr:hover {
+    background-color: var(--color-acento-suave);
+}
+
+.tabla-estilizada td strong {
+    color: var(--color-blanco);
 }
 
 .fecha-tabla {
-    font-size: 0.8rem;
-    color: #94a3b8;
+    font-size: 0.82rem;
+    color: var(--color-texto-tenue);
 }
 
-/* Badges de probabilidad */
-.badge {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 0.8rem;
+/* ETIQUETAS DE PROBABILIDAD DE NUBES Y LLUVIA */
+.etiqueta {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
 }
 
-.badge.verde {
-    background-color: rgba(16, 185, 129, 0.2);
+.etiqueta.verde {
+    background-color: rgba(16, 185, 129, 0.18);
     color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.35);
 }
 
-.badge.amarillo {
-    background-color: rgba(245, 158, 11, 0.2);
-    color: #fbbf24;
+.etiqueta.amarillo {
+    background-color: rgba(245, 166, 35, 0.18);
+    color: var(--color-acento);
+    border: 1px solid var(--color-acento-borde);
+}
+
+/* ADAPTACIÓN PARA MÓVILES Y TABLETS PEQUEÑAS (menos de 768px de ancho) */
+@media (max-width: 768px) { /*Estructura de if*/
+    .contenedor-principal {
+        padding: 20px 15px 40px 15px;
+    }
+
+    .intro-eclipses {
+        padding: 22px;
+    }
+
+    .intro-eclipses h2 {
+        font-size: 1.45rem;
+    }
+
+    .card-herramienta {
+        padding: 20px;
+    }
+
+    details summary h3 {
+        font-size: 1.15rem;
+    }
+
+    /* Fuerza a que Solares y Lunares ocupen el 100% del ancho y se apilen en vertical */
+    .columna-eclipses {
+        flex: 1 1 100%;
+    }
 }
