@@ -1,85 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <link rel="stylesheet" href="css_styles.css">
-        <link rel="stylesheet" href="../css/estilos_encabezado.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eclipsarium</title>
+        
+        <link rel="stylesheet" href="../css/css_abtus_styles.css">
+        <link rel="stylesheet" href="../css/estilos_encabezado_y_footer.css">
+        
+        <title>Eclipsarium - Sobre Nosotros</title>
     </head>
-    <body text="white" background="resources/varios/background.png">
+    <body>
         <div class="espacio_blanco"></div>
         <div class="scroll-progress"></div> 
+        
+        <!-- Header -->
         <header class="header-eclipsarium">
             <h1 class="logo">Eclips<span>arium</span></h1>
             <nav class="nav-botones">
                 <a href="../html/index.html" class="btn-nav">Inicio</a>
                 <a href="../html/nexteclipses.html" class="btn-nav">Eclipses</a>
                 <a href="../html/multimedia.html" class="btn-nav">Galería</a>
-                <a href="../html/abtus.html" class="btn-nav">Nosotros</a>
+                <!-- Clase 'active' ilumina en dorado la pestaña actual -->
+                <a href="../html/abtus.html" class="btn-nav active">Nosotros</a>
                 <a href="../html/contactwus.html" class="btn-nav">Contáctanos</a>
             </nav>
         </header>
     
-        <section align = "center">
-            <h2>Bienvenidos a Eclipsarium, el lugar donde la Tierra, la Luna y el Sol se encuentran, y donde la oscuridad se convierte en puro espectáculo.</h2>
-        </section>
-        <main>
-            <p>Somos un <b>equipo de apasionados de la astronomía, cazadores de sombras y amantes del firmamento</b>. Nos fascina ese instante mágico en el que el día se vuelve noche y el <u>cosmos nos recuerda lo pequeños, y a la vez afortunados, que somos.</u> <b><u><i>Eclipsarium</i></u></b> nació con un propósito claro: <font size="+2" color="red">ser tu brújula en el mapa de los eventos celestes más impresionantes del planeta</font>, compartiendo ciencia, emoción y guías precisas para que nunca te pierdas el próximo gran alineamiento cósmico.</p>
-            <h2>Conoce a nuestro equipo</h2>
-            <table>
-                <tr>
-                    <td align="center">
-                        <figure>
-                            <img src="Resources/img/foto_guille.jpg" alt="Foto del cofundador de Eclipsarium Guillermo Jiménez Ramírez" height="425" width="350">
-                            <figcaption align="center">Foto del cofundador de Eclipsarium Guillermo Jiménez Ramírez</figcaption>
-                        </figure>
-                        <p><strong>Guillermo Jiménez Ramírez</strong> <u>es un profesional formado en la prestigiosa Universidad de Sevilla</u>, obteniendo su <strong>doctorado en Ingeniería de la Ciberseguridad</strong>. Allí perfeccionó sus habilidades en protección digital. Impulsado por una profunda pasión por la astronomía,<font color="orange"> decidió unir fuerzas con su gran amigo Alfonso para dar vida a un proyecto único</font>. Juntos crearon esta innovadora página web, fusionando un entorno digital totalmente seguro con la fascinación por el cosmos. <strong>Hoy en día, lidera el desarrollo técnico de la plataforma para asegurar que la comunidad astronómica explore el universo de forma segura.</strong></p>
-                    </td>
-                    <td align="center">
-                        <figure>
-                            <img src="Resources/img/foto_sito.jpg" alt="Foto del cofundador de Eclipsarium Alfonso Pajares López" height="425" width="350">
-                            <figcaption align="center">Foto del cofundador de Eclipsarium Alfonso Pajares López</figcaption>
-                        </figure>
-                        <p>Alfonso Pajares López, <strong>es un graduado en ingeniería aeroespacial con una mente brillante orientada al diseño y la exploración del cosmos</strong>. <font color="orange">Su profundo conocimiento técnico y su pasión por la astronomía lo llevaron a unirse con su amigo para materializar este gran proyecto digital.</font> Mientras su socio asegura la robustez cibernética de la web, él aporta la rigurosidad científica y la visión espacial que define el contenido de la plataforma. <font color="orange">Juntos han logrado que este portal sea el punto de encuentro perfecto para los amantes del universo</font></p>
-                    </td>
-                </tr>
-            </table>
-            <br><br><br>
-            <table align="center">
-                <tr>
-                    <td align="center">
-                        <figure>
-                            <img src="Resources/img/foto_guille_y_sito.jpeg" alt="Foto conjunta de los fundadores de Eclipsarium" height="350" width="700" align="center">
-                            <figcaption align="center">Foto conjunta de los fundadores de Eclipsarium</figcaption>
-                        </figure>
-                        <p><strong>Eclipsarium empezó como una locura de dos amigos de toda la vida</strong> que se subían al tejado de su pueblo con un telescopio <br> viejo y un par de cervezas a arreglar el universo. <br> Cansados de sus trabajos de oficina y de vivir en la rutina, <font color="orange"> mandar todo a paseo para montar una startup y <br> acercar las estrellas a todo el mundo</font> a través del turismo astronómico. Le pusieron Eclipsarium por aquel eclipse total <br> que vieron juntos de chavales, el momento exacto en el que prometieron que, tarde o temprano, acabarían viviendo de <br> <strong> <font color ="orange">su verdadera pasión: mirar al cielo.</font></strong></p>
-                    </td>
-                </tr>
-            </table>
-        </main>
-        <hr align="center" width="100%">
-    <footer class="footer-eclipsarium">
-        <div class="footer-contenido">
-            <p class="footer-titulo">Síguenos en redes sociales:</p>
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="contenedor-principal">
             
-            <div class="redes-sociales">
-                <a href="https://www.facebook.com/eclipsarium" class="social-link">
-                    <img src="../resources/varios/facebook_logo.png"  width="24" height="24"> Facebook
-                </a>
-                <a href="https://www.x.com/eclipsarium" class="social-link">
-                    <img src="../resources/varios/x_logo.png"  width="24" height="24"> Twitter
-                </a>
-                <a href="https://www.instagram.com/eclipsarium" class="social-link">
-                    <img src="../resources/varios/ig_logo.jpeg" width="24" height="24"> Instagram
-                </a>
-            </div>
+            <!-- BLOQUE DE PRESENTACIÓN DE ECLIPSARIUM -->
+            <section class="intro-nosotros">
+                <h2>Bienvenidos a Eclipsarium, el lugar donde la Tierra, la Luna y el Sol se encuentran, y donde la oscuridad se convierte en puro espectáculo.</h2>
+                <p>Somos un <strong>equipo de apasionados de la astronomía, cazadores de sombras y amantes del firmamento</strong>. Nos fascina ese instante mágico en el que el día se vuelve noche y el <u>cosmos nos recuerda lo pequeños, y a la vez afortunados, que somos.</u> <strong><u><em>Eclipsarium</em></u></strong> nació con un propósito claro: <span class="texto-destacado">ser tu brújula en el mapa de los eventos celestes más impresionantes del planeta</span>, compartiendo ciencia, emoción y guías precisas para que nunca te pierdas el próximo gran alineamiento cósmico.</p>
+            </section>
 
-            <div class="footer-contacto">
-                <p>Contact: <a href="mailto:contact@eclipsarium.es">contact@eclipsarium.es</a></p>
-                <p class="copyright">&copy; 2026 Eclipsarium. All rights reserved.</p>
-            </div>
+            <main>
+                <h2 class="titulo-seccion">Conoce a nuestro equipo</h2>
+                
+                <!-- GALERÍA FLEXBOX DE FUNDADORES (sustituye a la antigua tabla) -->
+                <div class="equipo-grid">
+                    
+                    <!-- Tarjeta 1: Guillermo -->
+                    <article class="card-miembro">
+                        <figure>
+                            <!-- Ruta corregida en minúscula (../resources/) para evitar fallos en GitHub Pages -->
+                            <img src="../resources/abtus/foto_guille.jpg" alt="Foto del cofundador de Eclipsarium Guillermo Jiménez Ramírez">
+                            <figcaption>Guillermo Jiménez Ramírez — Cofundador</figcaption>
+                        </figure>
+                        <h3>Guillermo Jiménez Ramírez</h3>
+                        <span class="rol-miembro">Arquitectura Web &amp; Ciberseguridad</span>
+                        <p><strong>Guillermo Jiménez Ramírez</strong> <u>es un profesional formado en la prestigiosa Universidad de Sevilla</u>, obteniendo su <strong>doctorado en Ingeniería de la Ciberseguridad</strong>. Allí perfeccionó sus habilidades en protección digital. Impulsado por una profunda pasión por la astronomía, <span class="resalte-dorado">decidió unir fuerzas con su gran amigo Alfonso para dar vida a un proyecto único</span>. Juntos crearon esta innovadora página web, fusionando un entorno digital totalmente seguro con la fascinación por el cosmos. <strong>Hoy en día, lidera el desarrollo técnico de la plataforma para asegurar que la comunidad astronómica explore el universo de forma segura.</strong></p>
+                    </article>
+
+                    <!-- Tarjeta 2: Alfonso -->
+                    <article class="card-miembro">
+                        <figure>
+                            <img src="../resources/abtus/foto_sito.jpg" alt="Foto del cofundador de Eclipsarium Alfonso Pajares López">
+                            <figcaption>Alfonso Pajares López — Cofundador</figcaption>
+                        </figure>
+                        <h3>Alfonso Pajares López</h3>
+                        <span class="rol-miembro">Ingeniería Aeroespacial &amp; Contenido Científico</span>
+                        <p><strong>Alfonso Pajares López</strong>, <strong>es un graduado en ingeniería aeroespacial con una mente brillante orientada al diseño y la exploración del cosmos</strong>. <span class="resalte-dorado">Su profundo conocimiento técnico y su pasión por la astronomía lo llevaron a unirse con su amigo para materializar este gran proyecto digital.</span> Mientras su socio asegura la robustez cibernética de la web, él aporta la rigurosidad científica y la visión espacial que define el contenido de la plataforma. <span class="resalte-dorado">Juntos han logrado que este portal sea el punto de encuentro perfecto para los amantes del universo.</span></p>
+                    </article>
+
+                </div>
+
+                <!-- BLOQUE FLEXBOX DE NUESTRA HISTORIA (sustituye a la segunda tabla) -->
+                <section class="historia-conjunta">
+                    <figure class="historia-foto">
+                        <img src="../resources/abtus/foto_guille_y_sito.jpeg" alt="Foto conjunta de los fundadores de Eclipsarium">
+                        <figcaption>Los fundadores de Eclipsarium en una sesión de observación</figcaption>
+                    </figure>
+                    
+                    <div class="historia-texto">
+                        <h3>Cómo empezó todo</h3>
+                        <p><strong>Eclipsarium empezó como una locura de dos amigos de toda la vida</strong> que se subían al tejado de su pueblo con un telescopio viejo y un par de cervezas a arreglar el universo. Cansados de sus trabajos de oficina y de vivir en la rutina, decidieron <span class="resalte-dorado">mandar todo a paseo para montar una startup y acercar las estrellas a todo el mundo</span> a través del turismo astronómico. Le pusieron Eclipsarium por aquel eclipse total que vieron juntos de chavales, el momento exacto en el que prometieron que, tarde o temprano, acabarían viviendo de <strong><span class="resalte-dorado">su verdadera pasión: mirar al cielo.</span></strong></p>
+                    </div>
+                </section>
+            </main>
         </div>
-    </footer>
+
+        <!-- Footer -->
+        <footer class="footer-eclipsarium">
+            <div class="footer-contenido">
+                <p class="footer-titulo">Síguenos en redes sociales:</p>
+                
+                <div class="redes-sociales">
+                    <a href="https://www.facebook.com/eclipsarium" class="social-link">
+                        <img src="../resources/varios/facebook_logo.png" alt="Logo de Facebook"> Facebook
+                    </a>
+                    <a href="https://www.x.com/eclipsarium" class="social-link">
+                        <img src="../resources/varios/x_logo.png" alt="Logo de X"> Twitter
+                    </a>
+                    <a href="https://www.instagram.com/eclipsarium" class="social-link">
+                        <img src="../resources/varios/ig_logo.jpeg" alt="Logo de Instagram"> Instagram
+                    </a>
+                </div>
+
+                <div class="footer-contacto">
+                    <p>Contact: <a href="mailto:contact@eclipsarium.es">contact@eclipsarium.es</a></p>
+                    <p class="copyright">&copy; 2026 Eclipsarium. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

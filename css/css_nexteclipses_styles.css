@@ -44,7 +44,7 @@ body {
     padding: 30px 20px 60px 20px;
 }
 
-/* CAJA DE INTRODUCCIÓN SUPERIOR */
+/* Caja de introducción superior */
 .intro-eclipses {
     background: linear-gradient(135deg, rgba(31, 40, 51, 0.92) 0%, rgba(11, 12, 16, 0.95) 100%);
     border: 1px solid var(--color-acento-borde);
@@ -81,7 +81,7 @@ body {
     margin-bottom: 0;
 }
 
-/* CONTENEDOR DE LAS TARJETAS PRINCIPALES */
+/* Contenedor de las tarjetas principales */
 .grid-herramientas {
     display: flex;
     flex-direction: column;
@@ -121,7 +121,7 @@ details summary::-webkit-details-marker {
     display: none;
 }
 
-/* Crea nuestra propia flecha dorada a la derecha del título */
+/* Crea una flecha propia dorada a la derecha del título */
 details summary::after {/*After implica que es justamente después del summary. Es un pseudoelemento*/
     content: '▼';
     margin-left: auto;
@@ -157,7 +157,7 @@ details summary h3 {
     border-bottom: 1px dashed var(--color-borde-sutil);
 }
 
-/* LISTAS DE ECLIPSES EN DOS COLUMNAS CON FLEXBOX */
+/* Lista de eclipses en dos columnas utilizando flexbox */
 .bloque-eclipses {
     display: flex;
     flex-wrap: wrap; /* Si no caben dos columnas de 450px, salta una debajo de la otra */
@@ -212,7 +212,7 @@ details summary h3 {
     font-size: 0.88rem;
 }
 
-/* TABLA DE PRONÓSTICO METEOROLÓGICO */
+/* Tabla de pronóstico meteorológico */
 .tabla-contenedor {
     overflow-x: auto; /* Permite scroll horizontal en pantallas estrechas sin romper la web. Optimización para móviles */
     margin-top: 10px;
@@ -262,7 +262,7 @@ details summary h3 {
     color: var(--color-texto-tenue);
 }
 
-/* ETIQUETAS DE PROBABILIDAD DE NUBES Y LLUVIA */
+/* Etiquetas de probabilidad de lluvia y nubes */
 .etiqueta {
     display: inline-block;
     padding: 4px 10px;
@@ -284,7 +284,7 @@ details summary h3 {
     border: 1px solid var(--color-acento-borde);
 }
 
-/* ADAPTACIÓN PARA MÓVILES Y TABLETS PEQUEÑAS (menos de 768px de ancho) */
+/* Adaptación para táblets y móviles pequeños (menos de 768px de ancho) */
 @media (max-width: 768px) { /*Estructura de if*/
     .contenedor-principal {
         padding: 20px 15px 40px 15px;

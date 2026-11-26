@@ -1,3 +1,18 @@
+:root {
+    --color-fondo-oscuro: #0B0C10;
+    --color-header-bg: rgba(31, 40, 51, 0.95);
+    --color-acento: #F5A623;
+    --color-texto: #C5C6C7;
+    --color-blanco: #FFFFFF;
+    --color-superficie: #1F2833;
+    --color-superficie-trans: rgba(31, 40, 51, 0.85);
+    --color-superficie-alt: #141A21;
+    --color-texto-tenue: #8E9297;
+    --color-acento-suave: rgba(245, 166, 35, 0.12);
+    --color-acento-borde: rgba(245, 166, 35, 0.4);
+    --color-borde-sutil: rgba(255, 255, 255, 0.08);
+}
+
 .imagen {
     transition: transform 4s;
     border-radius: 6px

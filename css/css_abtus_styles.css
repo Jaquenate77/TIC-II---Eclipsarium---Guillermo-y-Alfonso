@@ -1,0 +1,246 @@
+/* Paleta oficial de Eclipsarium */
+:root {
+    --color-fondo-oscuro: #0B0C10;
+    --color-header-bg: rgba(31, 40, 51, 0.95);
+    --color-acento: #F5A623;
+    --color-texto: #C5C6C7;
+    --color-blanco: #FFFFFF;
+    --color-superficie: #1F2833;
+    --color-superficie-trans: rgba(31, 40, 51, 0.85);
+    --color-superficie-alt: #141A21;
+    --color-texto-tenue: #8E9297;
+    --color-acento-suave: rgba(245, 166, 35, 0.12);
+    --color-acento-borde: rgba(245, 166, 35, 0.4);
+    --color-borde-sutil: rgba(255, 255, 255, 0.08);
+}
+
+* { /* Restablecemos por si hay conflictos con otras hojas de estilos */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../resources/varios/background.png);
+    background-attachment: fixed;
+    color: var(--color-texto);
+    line-height: 1.6; /* Interlineado */
+}
+
+/* Marca en dorado la pestaña "Nosotros" en el menú superior. El resto de botones están definidos en los estilos del encabezado */
+.header-eclipsarium .btn-nav.active {
+    color: var(--color-acento);
+    border-color: var(--color-acento);
+    background-color: var(--color-acento-suave);
+}
+
+/* Contenedor principal centrado (Optimización para móviles)*/
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px;
+}
+
+/* Bloque inicial y estilos de los textos */
+.intro-nosotros {
+    background: linear-gradient(135deg, rgba(31, 40, 51, 0.92) 0%, rgba(11, 12, 16, 0.95) 100%); /*Degradado del fondo de la caja*/
+    border: 1px solid var(--color-acento-borde);
+    border-left: 5px solid var(--color-acento); /*Hacemos la barra lateral más gruesa*/
+    padding: 35px;
+    border-radius: 16px;
+    margin-bottom: 45px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 166, 35, 0.08); /*Sensación de profundidad por la sombra*/
+}
+
+.intro-nosotros h2 { /*Estilo del título*/
+    color: var(--color-blanco);
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.intro-nosotros p { /*Estilos del texto*/
+    font-size: 1.05rem;
+    color: var(--color-texto);
+    text-align: justify;
+}
+
+
+.texto-destacado {
+    color: var(--color-acento);
+    font-weight: 600;
+    font-size: 1.12rem;
+}
+
+
+.resalte-dorado { /*Otra forma de destacar el texto*/
+    color: var(--color-acento);
+    font-weight: 500;
+}
+
+/* Titulo principal */
+.titulo-seccion {
+    color: var(--color-blanco);
+    font-size: 1.7rem;
+    text-transform: uppercase; /*Similar a .upper()*/
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-acento-borde);
+}
+
+/* Usamos flex para maquetar en lugar de tablas */
+.equipo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* Tarjeta individual de cada fundador */
+.card-miembro {
+    flex: 1 1 450px; /* El primer atributo permite que las tarjetas se estiren para ocupar el ancho y largo total del contenedor. El segundo indica lo mismo pero en sentido inverso, si la pantalla es más pequeña puede encogerse. El último factor es el tamaño ideal que proponemos. */
+    background-color: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-miembro:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-acento-borde);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(245, 166, 35, 0.12);
+}
+
+.card-miembro figure { 
+    width: 100%;
+    max-width: 340px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-miembro img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Recorta sin deformar la cara si la proporción varía */
+    object-position: top; /* Prioriza que no corte la cabeza por arriba */
+    border-radius: 12px;
+    border: 2px solid var(--color-acento-borde);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card-miembro figcaption { /*Pie de foto*/
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--color-texto-tenue);
+    font-style: italic;
+}
+
+.card-miembro h3 {
+    color: var(--color-blanco);
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.rol-miembro { /*Subtítulo bajo el nombre*/
+    color: var(--color-acento);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.card-miembro p {
+    color: var(--color-texto);
+    font-size: 0.98rem;
+    text-align: justify;
+}
+
+/* Tarjeta inferior */
+.historia-conjunta {
+    background-color: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 35px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.3s ease;
+}
+
+.historia-conjunta:hover {
+    border-color: var(--color-acento-borde);
+}
+
+.historia-foto {
+    flex: 1 1 420px;
+    text-align: center;
+}
+
+.historia-foto img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--color-acento-borde);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.historia-foto figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--color-texto-tenue);
+    font-style: italic;
+}
+
+.historia-texto {
+    flex: 1 1 420px;
+}
+
+.historia-texto h3 {
+    color: var(--color-blanco);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.historia-texto p {
+    font-size: 1.02rem;
+    color: var(--color-texto);
+    line-height: 1.75;
+    text-align: justify;
+}
+
+/* ADAPTACIÓN PARA MÓVILES */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 20px 15px 40px 15px;
+    }
+
+    .intro-nosotros,
+    .card-miembro,
+    .historia-conjunta {
+        padding: 22px;
+    }
+
+    .intro-nosotros h2 {
+        font-size: 1.4rem;
+    }
+
+    .card-miembro img {
+        height: 340px;
+    }
+}

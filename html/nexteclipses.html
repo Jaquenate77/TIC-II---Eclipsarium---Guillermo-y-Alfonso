@@ -2,12 +2,10 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <!-- Vital para que las media queries funcionen en el móvil -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <!-- Ojo: cuando unifiquemos todo en estilos.css, habrá que dejar aquí solo ese enlace -->
         <link rel="stylesheet" href="../css/css_nexteclipses_styles.css">
-        <link rel="stylesheet" href="../css/estilos_encabezado.css">
+        <link rel="stylesheet" href="../css/estilos_encabezado_y_footer.css">
         
         <title>Eclipsarium - Próximos Eclipses</title>
     </head>
@@ -18,7 +16,7 @@
         <!-- Barra superior naranja que marca el porcentaje de scroll -->
         <div class="scroll-progress"></div>
         
-        <!-- CABECERA Y MENÚ DE NAVEGACIÓN -->
+        <!-- Header y navegación -->
         <header class="header-eclipsarium">
             <h1 class="logo">Eclips<span>arium</span></h1>
             <nav class="nav-botones">
@@ -31,20 +29,20 @@
             </nav>
         </header>
     
-        <!-- CONTENEDOR PRINCIPAL (ancho máximo 1200px y centrado en pantalla) -->
+        <!-- Contenedor principal (ancho máximo 1200px y centrado en pantalla) -->
         <div class="contenedor-principal">
             
-            <!-- BLOQUE DE INTRODUCCIÓN: caja con borde izquierdo dorado (.intro-eclipses) -->
+            <!-- Introducción: caja con borde izquierdo dorado (.intro-eclipses) -->
             <article class="intro-eclipses">
                 <h2>El futuro se oscurece: Los próximos grandes espectáculos celestes</h2>
                 <p><strong>El cosmos no se detiene, y los mayores espectáculos de la naturaleza ya tienen fecha en nuestro calendario.</strong><br> En <u>Eclipsarium</u> sabemos que presenciar un eclipse solar o lunar es una experiencia transformadora que requiere estar en el lugar adecuado y en el momento preciso. Para que no te pierdas ni un solo segundo de estos asombrosos alineamientos astronómicos, hemos preparado la guía de observación definitiva.</p>
                 <p class="sub-intro">Para ayudarte a planificar tu próxima aventura bajo la sombra de los astros, esta sección se divide en <strong><em>dos herramientas fundamentales:</em></strong></p>
             </article>
 
-            <!-- CUERPO DE HERRAMIENTAS: apila las tarjetas principales en vertical con Flexbox -->
+            <!-- Herramientas apiladas de forma que las tarjetas principales quedan en vertical con Flexbox -->
             <main class="grid-herramientas">
                 
-                <!-- TARJETA 1: CALENDARIO DE ECLIPSES -->
+                <!-- 1º Tarjeta -> Calendario -->
                 <section class="card-herramienta">
                     <!-- 'open' hace que el desplegable salga abierto por defecto al cargar -->
                     <details open>
@@ -55,10 +53,10 @@
                         </summary>
                         <p class="desc-card">Una lista detallada con las fechas, horarios exactos y zonas de visibilidad de los próximos eventos astronómicos que cambiarán el día por la noche.</p>
                         
-                        <!-- Contenedor Flexbox: pone Solares y Lunares en 2 columnas en PC y 1 en móvil -->
+                        <!-- El contenedor Flexbox pone Solares y Lunares en 2 columnas en PC y 1 en móvil -->
                         <div class="bloque-eclipses">
                             
-                            <!-- Columna izquierda: Eclipses Solares -->
+                            <!-- Columna izquierda de Eclipses Solares -->
                             <div class="columna-eclipses">
                                 <h4>Próximos Eclipses Solares</h4>
                                 <ul class="lista-eclipses">
@@ -81,7 +79,7 @@
                                 </ul>
                             </div>
 
-                            <!-- Columna derecha: Eclipses Lunares -->
+                            <!-- Columna derecha de Eclipses Lunares -->
                             <div class="columna-eclipses">
                                 <h4>Próximos Eclipses Lunares</h4>
                                 <ul class="lista-eclipses">
@@ -99,7 +97,7 @@
                     </details>   
                 </section>
 
-                <!-- TARJETA 2: PRONÓSTICO METEOROLÓGICO -->
+                <!-- 2º Tarjeta -> Pronóstico meteorológico -->
                 <section class="card-herramienta">
                     <details open>
                         <summary>
@@ -108,7 +106,6 @@
                         </summary>
                         <p class="desc-card">Una tabla exclusiva con las probabilidades estadísticas de lluvia y nubosidad para cada fecha señalada, permitiéndote elegir el destino con los cielos más limpios.</p>
                         
-                        <!-- Div con overflow-x: auto para poder deslizar la tabla lateralmente en móvil -->
                         <div class="tabla-contenedor">
                             <!-- Tabla de datos (permitida porque muestra datos tabulados, no maquetación) -->
                             <table class="tabla-estilizada">

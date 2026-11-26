@@ -1,4 +1,275 @@
-body{
-    background-image: url(resources/varios/background.png)
+/* Paleta oficial de Eclipsarium */
+:root {
+    --color-fondo-oscuro: #0B0C10;
+    --color-header-bg: rgba(31, 40, 51, 0.95);
+    --color-acento: #F5A623;
+    --color-texto: #C5C6C7;
+    --color-blanco: #FFFFFF;
+    --color-superficie: #1F2833;
+    --color-superficie-trans: rgba(31, 40, 51, 0.85);
+    --color-superficie-alt: #141A21;
+    --color-texto-tenue: #8E9297;
+    --color-acento-suave: rgba(245, 166, 35, 0.12);
+    --color-acento-borde: rgba(245, 166, 35, 0.4);
+    --color-borde-sutil: rgba(255, 255, 255, 0.08);
+}
 
+* { /*Reseteamos para evitar conflictos*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo-oscuro);
+    background-image: url(../resources/varios/background.png);
+    background-attachment: fixed;
+    color: var(--color-texto);
+    line-height: 1.6; /*Interlineado*/
+}
+
+/* Ilumina en dorado el enlace de "Contáctanos" en la barra de navegación */
+.header-eclipsarium .btn-nav.active {
+    color: var(--color-acento);
+    border-color: var(--color-acento);
+    background-color: var(--color-acento-suave);
+}
+
+/* Contenedor principal centrado */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px;
+}
+
+/* ID 1: Caja de introducción superior */
+#intro-contacto {
+    background: linear-gradient(135deg, rgba(31, 40, 51, 0.92) 0%, rgba(11, 12, 16, 0.95) 100%); /*Degradado*/
+    border: 1px solid var(--color-acento-borde);
+    border-left: 5px solid var(--color-acento); /*Barra lateral más gruesa*/
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 166, 35, 0.08); /*Efecto de profundidad*/
+}
+
+#intro-contacto h2 {
+    color: var(--color-blanco);
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+#intro-contacto p {
+    font-size: 1.05rem;
+    color: var(--color-texto);
+}
+
+.resalte-pregunta {
+    color: var(--color-acento);
+    font-weight: 600;
+}
+
+/* Contenedor Flexbox que coloca el Formulario y las FAQ en paralelo en PC */
+.layout-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    align-items: flex-start; /* Evita que una columna se estire innecesariamente si la otra es más larga */
+}
+
+/* ID 2: Tarjeta del Formulario (columna izquierda) */
+#formulario-contacto {
+    flex: 1 1 460px;
+    background-color: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.3s ease;
+}
+
+#formulario-contacto:hover {
+    border-color: var(--color-acento-borde);
+}
+
+#formulario-contacto h3 {
+    color: var(--color-blanco);
+    font-size: 1.45rem;
+    margin-bottom: 22px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-acento-borde);
+}
+
+/* Apila los campos del formulario con un hueco uniforme sin necesidad de <br> */
+#formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ID 3: Botón principal de envío */
+#btn-enviar {
+    background-color: var(--color-acento);
+    color: var(--color-fondo-oscuro);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+}
+
+#btn-enviar:hover {
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.6);
+    transform: translateY(-5px);
+}
+
+/* ID 4: Bloque lateral de Preguntas Frecuentes (columna derecha) */
+#seccion-faq {
+    flex: 1 1 460px;
+    background-color: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+#seccion-faq h3 {
+    color: var(--color-acento);
+    font-size: 1.45rem;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-acento-borde);
+}
+
+
+/* Cada pareja de etiqueta + campo de texto del formulario */
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-grupo label {
+    color: var(--color-blanco);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Estilo unificado para inputs, desplegable select y área de texto */
+.campo-control {
+    width: 100%;
+    background-color: var(--color-superficie-alt);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--color-blanco);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Ilumina el borde en dorado cuando el usuario pincha dentro para escribir */
+.campo-control:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 10px rgba(245, 166, 35, 0.25);
+}
+
+/* Cada caja desplegable de pregunta frecuente */
+.faq-item {
+    background-color: var(--color-superficie-alt);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    transition: border-color 0.25s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--color-acento-borde);
+}
+
+.faq-item summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    color: var(--color-blanco);
+    font-weight: 600;
+    font-size: 0.98rem;
+    user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker { /*Eliminamos la flecha gris predeterminada de los navegadores*/
+    display: none;
+}
+
+/* Signo + dorado a la derecha que cambia a - al abrir la pregunta */
+.faq-item summary::after {
+    content: '+';
+    color: var(--color-acento);
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: transform 0.25s ease;
+}
+
+.faq-item[open] summary { /*If .faq-item == Open: */
+    color: var(--color-acento);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--color-borde-sutil); /*Ponemos una línea discontínua bajo el título*/
+}
+
+.faq-item[open] summary::after { /*Cambiamos el + por un -*/
+    content: '−';
+}
+
+.faq-item p {
+    color: var(--color-texto);
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+/* Avisos destacados dentro de las respuestas*/
+.aviso-peligro {
+    color: #f87171;
+    font-weight: 700;
+}
+
+.aviso-seguro {
+    color: #34d399;
+    font-weight: 700;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 20px 15px 40px 15px;
+    }
+
+    #intro-contacto,
+    #formulario-contacto,
+    #seccion-faq {
+        padding: 22px;
+    }
+
+    #intro-contacto h2 {
+        font-size: 1.45rem;
+    }
+
+    #formulario-contacto,
+    #seccion-faq {
+        flex: 1 1 100%;
+    }
 }
