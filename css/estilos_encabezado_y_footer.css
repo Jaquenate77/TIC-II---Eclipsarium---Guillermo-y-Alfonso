@@ -81,8 +81,14 @@
     }
 }
 
+@font-face {
+    font-family: 'Anta-Regular';
+    src: url('../resources/Anta-Regular.ttf');
+    font-display: swap;
+}
+
 .header-eclipsarium .logo {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Anta-regular';
     font-size: 2rem;
     font-weight: bold;
     color: var(--color-blanco);
