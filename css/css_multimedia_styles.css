@@ -318,3 +318,30 @@ body {
     height: 24px;
     vertical-align: middle;
 }
+
+@media (max-width: 768px) { /*Estructura de if*/
+    .contenedor-principal {
+        padding: 20px 15px 40px 15px;
+    }
+
+    .intro-eclipses {
+        padding: 22px;
+    }
+
+    .intro-eclipses h2 {
+        font-size: 1.45rem;
+    }
+
+    .card-herramienta {
+        padding: 20px;
+    }
+
+    details summary h3 {
+        font-size: 1.15rem;
+    }
+
+    /* Fuerza a que Solares y Lunares ocupen el 100% del ancho y se apilen en vertical */
+    .columna-eclipses {
+        flex: 1 1 100%;
+    }
+}
