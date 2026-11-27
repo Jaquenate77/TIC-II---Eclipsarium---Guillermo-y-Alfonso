@@ -13,58 +13,307 @@
     --color-borde-sutil: rgba(255, 255, 255, 0.08);
 }
 
-.imagen {
-    transition: transform 4s;
-    border-radius: 6px
+* {
+    box-sizing: border-box;
 }
-.imagen:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-.contenedor1 {
-    display: flex;
-    flex-wrap: wrap; 
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: center;
-}
-.contenedor2 {
-    display: flex;
-    position: sticky;
-    flex-wrap: wrap; 
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: center;
-}
-.contenedor3 {
-    display: flex;
-    position: sticky;
-    flex-wrap: wrap; 
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: center;
-}
-.item {
-    min-width: 500px;
-}
-.titulo_seccion{
-    text-align: center;
-    font-size: 275%;
-    color: peru;
-    font-weight: bold;
-}
-.apartado{
-    text-align: left;
-    font-size: 150%;
-    color: tan;
-    font-weight: bold;
-}
-.subapartado{
-    text-align: left;
-    font-size: 125%;
-    color: khaki;
-    font-weight: bold;
-}
-.texto{
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--color-blanco);
+    background-color: var(--color-fondo-oscuro);
+    background-image: url('../resources/varios/background.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    line-height: 1.7;
+}
+
+.contenedor-principal {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.separador {
+    border: 0;
+    height: 1px;
+    width: 85%;
+    margin: 3.5rem auto;
+    background: linear-gradient(90deg, transparent, var(--color-acento-borde), transparent);
+}
+
+/* Sección Cuenta Regresiva */
+.seccion-contador {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--color-superficie-trans);
+    border: 1px solid var(--color-acento-borde);
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 1rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.titulo-contador {
+    color: var(--color-blanco);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.caja-iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja-iframe iframe {
+    width: 350px;
+    height: 120px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.fecha-eclipse {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--color-acento);
+    letter-spacing: 0.5px;
+}
+
+/* Títulos de sección */
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.3rem;
+    color: var(--color-acento);
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 12px rgba(245, 166, 35, 0.25);
+}
+
+/* Tarjetas de contenido (Introducción, Solares y Lunares) */
+.tarjeta-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    background: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease;
+}
+
+.tarjeta-contenido:hover {
+    border-color: var(--color-acento-borde);
+}
+
+.columna-texto {
+    flex: 1 1 480px;
+}
+
+.columna-imagen {
+    flex: 1 1 420px;
+    display: flex;
+    justify-content: center;
+}
+
+.apartado {
+    font-size: 1.75rem;
+    color: var(--color-acento);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-acento-borde);
+    padding-bottom: 0.4rem;
+}
+
+.subapartado {
+    font-size: 1.2rem;
+    color: var(--color-blanco);
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.texto,
+.texto-destacado {
+    color: var(--color-texto);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.texto-destacado {
+    font-size: 1.15rem;
+    border-left: 4px solid var(--color-acento);
+    padding-left: 1.25rem;
+    background: var(--color-acento-suave);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Listas con viñetas personalizadas */
+.lista-eclipses {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.lista-eclipses li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.9rem;
+    color: var(--color-texto);
+}
+
+.lista-eclipses li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--color-acento);
+    font-size: 0.9rem;
+}
+
+.lista-eclipses strong {
+    color: var(--color-blanco);
+}
+
+/* Figuras e imágenes */
+.figura-eclipse {
+    margin: 0;
+    background: var(--color-superficie-alt);
+    padding: 0.85rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-borde-sutil);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.figura-eclipse:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(245, 166, 35, 0.2);
+}
+
+.figura-eclipse img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.figura-eclipse figcaption {
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-texto-tenue);
+    font-style: italic;
+}
+
+/* Sección Anatomía de la Totalidad */
+.intro-totalidad {
+    max-width: 780px;
+    margin: -1.25rem auto 2.5rem auto;
+    text-align: center;
+    color: var(--color-texto);
+    font-size: 1.08rem;
+}
+
+.rejilla-totalidad {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+}
+
+.tarjeta-fase {
+    background: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 1.85rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-fase:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-acento-borde);
+    box-shadow: 0 14px 32px rgba(245, 166, 35, 0.18);
+}
+
+.etiqueta-fase {
+    align-self: flex-start;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-acento);
+    background: var(--color-acento-suave);
+    border: 1px solid var(--color-acento-borde);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+}
+
+.titulo-fase {
+    font-size: 1.35rem;
+    color: var(--color-blanco);
+    margin: 0 0 0.75rem 0;
+}
+
+.tarjeta-fase .texto {
+    margin-bottom: 0;
+    font-size: 0.98rem;
+}
+
+/* Sección Recomendaciones */
+.rejilla-recomendaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.tarjeta-recomendacion {
+    background: var(--color-superficie-trans);
+    border: 1px solid var(--color-borde-sutil);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-recomendacion:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-acento-borde);
+}
+
+.apartado-centrado {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--color-acento);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--color-acento-borde);
+}
+
+/* Iconos del Footer */
+.social-link img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
 }

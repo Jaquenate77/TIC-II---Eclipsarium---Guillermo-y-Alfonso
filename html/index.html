@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/css_index_styles.css">
-    <link rel="stylesheet" href="../css/estilos_encabezado_y_footer.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eclipsarium</title>
+    <link rel="stylesheet" href="../css/css_index_styles.css">
+    <link rel="stylesheet" href="../css/estilos_encabezado_y_footer.css">
 </head>
-<body text="white" background="../resources/varios/background.png">
+<body>
     <div class="espacio_blanco"></div>
-    <div class="scroll-progress"></div> 
+    <div class="scroll-progress"></div>
+
     <header class="header-eclipsarium">
         <h1 class="logo">Eclips<span>arium</span></h1>
         <nav class="nav-botones">
@@ -21,110 +22,205 @@
         </nav>
     </header>
 
-        <main>
-        <section>
-            <h2 align="center">Falta para el próximo Eclipse Solar Anular:</h2>  
-            <table align="center">
-                <td>    
-                    <iframe src="https://free.timeanddate.com/countdown/i9j7a1b3/n141/cf100/cm0/cu4/ct0/cs1/ca1/co0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw350/szh120/iso2027-02-06T10:00:00" allowtransparency="true" frameborder="10" width="350" height="120" align="center"></iframe>
-                </td>
-            </table>
-            <p align="center"><small><i><time datetime="2027-02-06">6 de Febrero</time></i></small></p>
-        </section>
-        <hr align="center" width="100%">
-        <section>
-            <div>
-                <p class="titulo_seccion">Introducción a los eclipses.</p>
+    <main class="contenedor-principal">
+        <section class="seccion-contador">
+            <h2 class="titulo-contador">Próximo Eclipse Solar en:</h2>
+            <div class="caja-iframe">
+                <iframe 
+                    src="https://free.timeanddate.com/countdown/i9j7a1b3/n141/cf100/cm0/cu4/ct0/cs1/ca1/co0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw350/szh120/iso2027-02-06T10:00:00" 
+                    title="Cuenta regresiva para el próximo Eclipse Solar Anular">
+                </iframe>
             </div>
-            <div class="contenedor1">
-                <div class="item">    
-                    <p class="texto" align="left">Un eclipse es un fenómeno astronómico que ocurre cuando <br>un cuerpo celeste se alinea y pasa por delante de otro,<br> ocultándolo total o parcialmente a la vista de un observador o<br> proyectando su sombra sobre él.</p>
+            <p class="fecha-eclipse"><time datetime="2027-02-06">6 de Febrero de 2027</time></p>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-introduccion">
+            <h2 class="titulo-seccion">Introducción a los eclipses</h2>
+
+            <article class="tarjeta-contenido">
+                <div class="columna-texto">
+                    <p class="texto-destacado">
+                        Un eclipse es un fenómeno astronómico que ocurre cuando un cuerpo celeste se alinea y pasa por delante de otro, ocultándolo total o parcialmente a la vista de un observador o proyectando su sombra sobre él.
+                    </p>
                 </div>
-                <div class="item">    
-                    <figure class = imagen>
-                        <img src="../resources/index/tipos-eclipse.jpg" alt="Tipos de eclipse." height="300" width="550">
+                <div class="columna-imagen">
+                    <figure class="figura-eclipse">
+                        <img src="../resources/index/tipos-eclipse.jpg" alt="Esquema general de los tipos de eclipse">
                         <figcaption>Tipos de eclipse.</figcaption>
                     </figure>
                 </div>
-            </div>
-            <div class="contenedor2">
-                <div class="item">    
-                    <p class="apartado">Eclipses Solares.</p>
-                    <p class="subapartado">¿Qué es?</p>
-                    <p class="texto">Un eclipse solar ocurre cuando la Luna<br> se interpone exactamente entre el Sol y<br>la Tierra, bloqueando la luz solar y<br>proyectando su sombra sobre una región<br>de nuestro planeta durante el día.<br></p>
-                    <p class="subapartado">¿Por qué ocurre?</p>
-                    <p class="texto">Este fenómeno sucede únicamente durante<br>la fase de luna nueva, cuando el satélite<br>se encuentra en el lado iluminado por el Sol<br>pero oculto para nosotros. Los eclipses solares<br>no ocurren todos los meses porque la órbita<br>de la Luna está ligeramente inclinada respecto<br>a la de la Tierra, por lo que los tres astros<br>raras veces se alinean de forma perfecta.<br></p>
-                    <p class="subapartado">Tipos de eclipse.</p>
-                    <p class="texto">• Total: La Luna cubre por completo el disco<br>solar. Durante unos minutos, el día se convierte<br>temporalmente en noche y se puede observar la <br>corona del Sol.<br><br>• Anular: La Luna está más lejos de la Tierra y<br>se ve más pequeña, por lo que no logra tapar el<br>Sol por completo, dejando visible un anillo de<br>luz brillante llamado "anillo de fuego".<br><br>• Parcial: La Luna solo cubre una parte del<br>Sol, por lo que este parece tener una silueta<br>en forma de media luna.</p>
+            </article>
+
+            <article class="tarjeta-contenido">
+                <div class="columna-texto">
+                    <h3 class="apartado">Eclipses Solares</h3>
+                    
+                    <h4 class="subapartado">¿Qué es?</h4>
+                    <p class="texto">
+                        Un eclipse solar ocurre cuando la Luna se interpone exactamente entre el Sol y la Tierra, bloqueando la luz solar y proyectando su sombra sobre una región de nuestro planeta durante el día.
+                    </p>
+
+                    <h4 class="subapartado">¿Por qué ocurre?</h4>
+                    <p class="texto">
+                        Este fenómeno sucede únicamente durante la fase de luna nueva, cuando el satélite se encuentra en el lado iluminado por el Sol pero oculto para nosotros. No ocurren todos los meses porque la órbita de la Luna está ligeramente inclinada respecto a la de la Tierra, por lo que los tres astros raras veces se alinean de forma perfecta.
+                    </p>
+
+                    <h4 class="subapartado">Tipos de eclipse</h4>
+                    <ul class="lista-eclipses">
+                        <li><strong>Total:</strong> La Luna cubre por completo el disco solar. Durante unos minutos, el día se convierte temporalmente en noche y se puede observar la corona del Sol.</li>
+                        <li><strong>Anular:</strong> La Luna está más lejos de la Tierra y se ve más pequeña, por lo que no logra tapar el Sol por completo, dejando visible un anillo de luz brillante llamado «anillo de fuego».</li>
+                        <li><strong>Parcial:</strong> La Luna solo cubre una parte del Sol, por lo que este parece tener una silueta en forma de media luna.</li>
+                    </ul>
                 </div>
-                <div class="item">    
-                    <figure class = imagen>
-                        <img src="../resources/index/tipos-eclipses-solares.jpg" alt="Tipos de eclipse solar." height="600" width="550">
+                <div class="columna-imagen">
+                    <figure class="figura-eclipse">
+                        <img src="../resources/index/tipos-eclipses-solares.jpg" alt="Comparativa visual de los tipos de eclipse solar">
                         <figcaption>Tipos de eclipse solar.</figcaption>
                     </figure>
                 </div>
-            </div>
-            <div class="contenedor3">
-                <div class="item">    
-                    <p class="apartado">Eclipses Lunares.</p>
-                    <p class="subapartado">¿Qué es?</p>
-                    <p class="texto"><br>Un eclipse lunar ocurre cuando la Tierra se <br>interpone exactamente entre el Sol y la Luna, <br>bloqueando la luz solar y proyectando su sombra <br>sobre la superficie de nuestro satélite natural.<br><br><font size="+1" color="orange"><strong>¿Por qué ocurre?</strong></font><br><br>Este fenómeno sucede únicamente durante la fase <br>de luna llena, cuando los tres cuerpos celestes <br>quedan perfectamente alineados. La Luna no se <br>vuelve invisible, sino que adquiere un tono <br>rojizo o cobrizo (llamado "luna de sangre") <br>porque la atmósfera de la Tierra filtra la luz <br>del Sol y desvía solo los tonos rojos hacia ella.<br><br><font size="+1" color="orange"><strong>Tipos de eclipse.</strong></font><br><br>• <strong>Total:</strong> La Luna entra por completo en la sombra <br>más oscura de la Tierra (umbra) y se tiñe de color rojo.<br><br>• <strong>Parcial:</strong> Solo una parte de la Luna atraviesa la <br>umbra, por lo que parece que le falta un pedazo.<br><br>• <strong>Penumbral:</strong> La Luna pasa por la sombra exterior más<br>tenue (penumbra), causando solo un ligero oscurecimiento <br>que es difícil de notar a simple vista.<br></p>
+            </article>
+
+            <article class="tarjeta-contenido">
+                <div class="columna-texto">
+                    <h3 class="apartado">Eclipses Lunares</h3>
+
+                    <h4 class="subapartado">¿Qué es?</h4>
+                    <p class="texto">
+                        Un eclipse lunar ocurre cuando la Tierra se interpone exactamente entre el Sol y la Luna, bloqueando la luz solar y proyectando su sombra sobre la superficie de nuestro satélite natural.
+                    </p>
+
+                    <h4 class="subapartado">¿Por qué ocurre?</h4>
+                    <p class="texto">
+                        Este fenómeno sucede únicamente durante la fase de luna llena, cuando los tres cuerpos celestes quedan perfectamente alineados. La Luna no se vuelve invisible, sino que adquiere un tono rojizo o cobrizo (llamado «luna de sangre») porque la atmósfera terrestre filtra la luz del Sol y desvía solo los tonos rojos hacia ella.
+                    </p>
+
+                    <h4 class="subapartado">Tipos de eclipse</h4>
+                    <ul class="lista-eclipses">
+                        <li><strong>Total:</strong> La Luna entra por completo en la sombra más oscura de la Tierra (umbra) y se tiñe de color rojo.</li>
+                        <li><strong>Parcial:</strong> Solo una parte de la Luna atraviesa la umbra, por lo que parece que le falta un pedazo.</li>
+                        <li><strong>Penumbral:</strong> La Luna pasa por la sombra exterior más tenue (penumbra), causando solo un ligero oscurecimiento difícil de notar a simple vista.</li>
+                    </ul>
                 </div>
-                <div class="item">    
-                    <figure class = imagen>
-                        <img src="../resources/index/tipos-eclipse-luna.jpg" alt="Tipos de eclipse lunar." height="600" width="550">
+                <div class="columna-imagen">
+                    <figure class="figura-eclipse">
+                        <img src="../resources/index/tipos-eclipse-luna.jpg" alt="Esquema de las fases y tipos de eclipse lunar">
                         <figcaption>Tipos de eclipse lunar.</figcaption>
                     </figure>
                 </div>
+            </article>
+        </section>
+
+        <hr class="separador">
+
+        <section class="seccion-totalidad">
+            <h2 class="titulo-seccion">Anatomía de la totalidad solar</h2>
+            <p class="intro-totalidad">
+                Durante los breves minutos en los que la Luna cubre al 100 % la fotosfera del Sol, se desencadena una secuencia de fenómenos ópticos y atmosféricos imposibles de observar en cualquier otro momento.
+            </p>
+
+            <div class="rejilla-totalidad">
+                <article class="tarjeta-fase">
+                    <span class="etiqueta-fase">01 · Inicio (Contacto C2)</span>
+                    <h3 class="titulo-fase">Perlas de Baily</h3>
+                    <p class="texto">
+                        Instantes antes de que el Sol quede oculto por completo, los últimos rayos de luz se filtran a través de los valles y cráteres del irregular relieve lunar, creando una cadena de puntos luminosos en el borde oscuro de la Luna.
+                    </p>
+                </article>
+
+                <article class="tarjeta-fase">
+                    <span class="etiqueta-fase">02 · Transición</span>
+                    <h3 class="titulo-fase">El Anillo de Diamantes</h3>
+                    <p class="texto">
+                        Cuando solo queda visible una última «perla» brillante de la fotosfera y comienza a asomar el halo interior de la corona, el conjunto dibuja en el cielo la silueta inconfundible de un anillo con un diamante resplandeciente.
+                    </p>
+                </article>
+
+                <article class="tarjeta-fase">
+                    <span class="etiqueta-fase">03 · Atmósfera Baja</span>
+                    <h3 class="titulo-fase">Cromosfera y Protuberancias</h3>
+                    <p class="texto">
+                        Al desaparecer el resplandor principal, se distingue durante unos segundos un fino borde de color rosa intenso o rojizo alrededor de la Luna (la cromosfera), junto a lenguas de plasma magnetizado que emergen del Sol.
+                    </p>
+                </article>
+
+                <article class="tarjeta-fase">
+                    <span class="etiqueta-fase">04 · Clímax del Eclipse</span>
+                    <h3 class="titulo-fase">La Corona Solar</h3>
+                    <p class="texto">
+                        Es el espectáculo central de la totalidad. La atmósfera exterior del Sol se despliega en filamentos nacarados moldeados por su campo magnético, mientras el cielo adquiere un tono azul cobalto profundo y aparecen estrellas y planetas.
+                    </p>
+                </article>
+
+                <article class="tarjeta-fase">
+                    <span class="etiqueta-fase">05 · Efectos Terrestres</span>
+                    <h3 class="titulo-fase">Bandas de Sombra y Horizonte 360°</h3>
+                    <p class="texto">
+                        La turbulencia atmosférica sobre el fino hilo de luz solar proyecta ondas tenues de luz y sombra sobre el suelo (bandas de sombra), mientras todo el horizonte se tiñe de tonos anaranjados como un crepúsculo simultáneo de 360 grados.
+                    </p>
+                </article>
+
+                <article class="tarjeta-fase">
+                    <span class="etiqueta-fase">06 · Final (Contacto C3)</span>
+                    <h3 class="titulo-fase">Segundo Anillo y Salida</h3>
+                    <p class="texto">
+                        El proceso ocurre en orden inverso: surge un segundo anillo de diamantes seguido de las perlas de Baily por el limbo opuesto de la Luna. Este destello marca el final de la totalidad y el momento de volver a colocarse las gafas homologadas.
+                    </p>
+                </article>
             </div>
         </section>
-        <hr align="center" width="100%">
-        <section>
-            <div>
-            <p class="titulo_seccion"">Recomendaciones para ver eclipses.</p>
+
+        <hr class="separador">
+
+        <section class="seccion-recomendaciones">
+            <h2 class="titulo-seccion">Recomendaciones para ver eclipses</h2>
+            
+            <div class="rejilla-recomendaciones">
+                <article class="tarjeta-recomendacion">
+                    <h3 class="apartado-centrado">Eclipses Solares</h3>
+                    <ul class="lista-eclipses">
+                        <li><strong>Usa siempre protección certificada:</strong> Nunca mires al Sol directamente. Es obligatorio usar gafas de eclipse homologadas con la certificación ISO 12312-2. Las gafas de sol comunes, radiografías o cristales ahumados no sirven y causan daños oculares graves.</li>
+                        <li><strong>Protege tus cámaras y telescopios:</strong> Si usas telescopios, binoculares o cámaras fotográficas, debes colocarles un filtro solar especial en la parte frontal (el objetivo). Mirar sin filtro, incluso con gafas de eclipse puestas, quemará tus ojos al instante por el efecto lupa.</li>
+                        <li><strong>Aprovecha la proyección indirecta:</strong> Si no tienes gafas, haz un agujero con un alfiler en una cartulina y proyecta la luz del Sol sobre el suelo o una pared blanca para ver la silueta del eclipse de forma segura.</li>
+                        <li><strong>Atiende a la totalidad:</strong> Si estás en la franja de un eclipse solar total, solo podrás quitarte las gafas durante los breves minutos en que el Sol quede cubierto al 100 %. Tan pronto como vuelva a asomarse, póntelas de inmediato.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-recomendacion">
+                    <h3 class="apartado-centrado">Eclipses Lunares</h3>
+                    <ul class="lista-eclipses">
+                        <li><strong>Disfruta a simple vista:</strong> No necesitas ningún tipo de filtro ni protección ocular, ya que la Luna solo refleja luz solar atenuada. Es 100 % seguro para los ojos.</li>
+                        <li><strong>Usa óptica básica:</strong> Aunque se ve perfectamente a simple vista, usar binoculares o un telescopio básico te permitirá apreciar cómo avanza la sombra sobre los cráteres y los cambios en las tonalidades rojizas.</li>
+                        <li><strong>Busca cielos despejados:</strong> A diferencia de los solares, la contaminación lumínica de la ciudad no arruina la experiencia, pero sí necesitas un cielo libre de nubes para observar la Luna.</li>
+                        <li><strong>Fotografía sin equipo costoso:</strong> Puedes tomar fotos de la «luna de sangre» con tu teléfono móvil colocándolo en un trípode para evitar trepidación, o acoplándolo al ocular de unos binoculares.</li>
+                    </ul>
+                </article>
             </div>
-            <table align="center">
-                <tr>
-                    <td>
-                        <p align="center">
-                            <font size="+2" color="cian"><strong>Eclipses Solares.</strong></font>
-                        </p>
-                        <p>
-                            • <strong>Usa siempre protección certificada:</strong> Nunca mires al Sol directamente. Es obligatorio<br>usar gafas de eclipse homologadas con la certificación ISO 12312-2. Las gafas<br>de sol comunes, radiografías o cristales ahumados no sirven y causan ceguera<br>parcial o total.<br><br>• <strong>Protege tus cámaras y telescopios:</strong> Si usas telescopios, binoculares o cámaras fotográficas,<br>debes colocarles un filtro solar especial en la parte frontal (el objetivo).<br>Mirar a través de estos aparatos sin filtro, incluso llevando gafas de eclipse<br>puestas, quemará tus ojos al instante debido al efecto lupa.<br><br>• <strong>Aprovecha la proyección indirecta:</strong> Si no tienes gafas, puedes hacer un agujero con un alfiler<br>en una cartulina y proyectar la luz del Sol sobre el suelo o una pared blanca<br>para ver la silueta del eclipse de forma totalmente segura.<br><br>• <strong>Atiende a la totalidad:</strong> Si tienes la suerte de estar en la zona de un eclipse solar total,<br>solo podrás quitarte las gafas durante los breves minutos en que el Sol quede<br>cubierto al 100% y el cielo se oscurezca. Tan pronto como el Sol vuelva a asomarse,<br>debes ponértelas de inmediato.<br>
-                        </p>
-                    </td>
-                    <td>
-                        <p align="center">
-                            <font size="+2" color="cian"><strong>Eclipses Lunares.</strong></font>
-                        </p>
-                        <p>
-                            • <strong>Disfruta a simple vista:</strong> No necesitas ningún tipo de filtro ni<br>protección ocular, ya que la Luna solo refleja luz solar atenuada. Es 100% seguro<br>para los ojos.<br><br>• <strong>Usa óptica básica:</strong> Aunque se ve perfectamente al ojo humano, usar<br>binoculares o un telescopio básico te permitirá apreciar en detalle cómo avanza la<br>sombra sobre los cráteres y los cambios en las tonalidades rojizas.<br><br>• <strong>Busca cielos despejados:</strong> A diferencia de los solares, la contaminación<br>lumínica de la ciudad no arruina la experiencia, pero sí necesitas un cielo libre de<br>nubes para poder ver la Luna.<br><br>• <strong>Fotografía sin equipo costoso:</strong> Puedes tomar fotos de la "luna de<br>sangre" con tu teléfono móvil colocándolo en un trípode para evitar que salga borrosa,<br>o acoplando el teléfono al ocular de unos binoculares.<br><br><br><br><br>
-                        </p>
-                    </td>
-                </tr>
-            </table>
         </section>
     </main>
-    <hr align="center" width="100%">
+
+    <hr class="separador">
+
     <footer class="footer-eclipsarium">
         <div class="footer-contenido">
             <p class="footer-titulo">Síguenos en redes sociales:</p>
             
             <div class="redes-sociales">
-                <a href="https://www.facebook.com/eclipsarium" class="social-link">
-                    <img src="../resources/varios/facebook_logo.png"  width="24" height="24"> Facebook
+                <a href="https://www.facebook.com/eclipsarium" target="_blank" class="social-link">
+                    <img src="../resources/varios/facebook_logo.png" alt="Facebook"> Facebook
                 </a>
-                <a href="https://www.x.com/eclipsarium" class="social-link">
-                    <img src="../resources/varios/x_logo.png"  width="24" height="24"> Twitter
+                <a href="https://www.x.com/eclipsarium" target="_blank" class="social-link">
+                    <img src="../resources/varios/x_logo.png" alt="Twitter"> Twitter
                 </a>
-                <a href="https://www.instagram.com/eclipsarium" class="social-link">
-                    <img src="../resources/varios/ig_logo.jpeg" width="24" height="24"> Instagram
+                <a href="https://www.instagram.com/eclipsarium" target="_blank" class="social-link">
+                    <img src="../resources/varios/ig_logo.jpeg" alt="Instagram"> Instagram
                 </a>
             </div>
 
             <div class="footer-contacto">
                 <p>Contact: <a href="mailto:contact@eclipsarium.es">contact@eclipsarium.es</a></p>
-                <p class="copyright">&copy; 2026 Eclipsarium. All rights reserved.</p>
+                <p class="copyright">© 2026 Eclipsarium. All rights reserved.</p>
             </div>
         </div>
     </footer>
