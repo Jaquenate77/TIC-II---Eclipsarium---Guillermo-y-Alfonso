@@ -265,3 +265,93 @@
     opacity: 0.4; 
     margin-top: 20px;
 }
+
+@media (max-width: 950px) {
+    .espacio_blanco {
+        min-height: 115px; /* Aumentamos el hueco superior porque el header ahora tiene 2 filas */
+    }
+
+    .header-eclipsarium {
+        height: auto; /* Quitamos los 80px fijos para que crezca según ocupen los botones */
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 15px;
+        background-color: var(--color-header-bg);
+    }
+
+    /* Desactivamos la expansión del hover en pantallas táctiles para que no pegue saltos al tocar */
+    .header-eclipsarium:hover {
+        padding: 12px 15px;
+    }
+
+    .header-eclipsarium .logo {
+        font-size: 1.65rem;
+    }
+
+    .header-eclipsarium .nav-botones {
+        flex-wrap: wrap; /* Si no caben todos los botones en una línea, bajan ordenados */
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .header-eclipsarium .btn-nav {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    /* En móvil, al hacer scroll encogemos solo al 94% de ancho (en vez de 75%) para no aplastar los enlaces */
+    @keyframes descuelgue-header {
+        from {
+            width: 100%;
+            top: 0;
+            border-radius: 0;
+            background-color: var(--color-header-bg);
+            border: 1px solid transparent;
+        }
+        to {
+            width: 94%;
+            top: 12px;
+            border-radius: 24px;
+            background-color: rgba(31, 40, 51, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+/* Ajustes extra para móviles estrechos (menos de 600px) */
+@media (max-width: 600px) {
+    .espacio_blanco {
+        min-height: 135px; /* Un poco más de margen por si los botones ocupan dos líneas en móviles muy estrechos */
+    }
+
+    .header-eclipsarium .logo {
+        font-size: 1.45rem;
+        letter-spacing: 2px;
+    }
+
+    .header-eclipsarium .btn-nav {
+        font-size: 0.82rem;
+        padding: 5px 10px;
+    }
+
+    /* En el footer, ponemos los botones de redes en columna y ensanchamos el bloque de contacto */
+    .footer-eclipsarium {
+        padding: 35px 15px 25px 15px;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .footer-eclipsarium .redes-sociales {
+        gap: 12px;
+    }
+
+    .footer-eclipsarium .social-link {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+    }
+
+    .footer-eclipsarium .footer-contacto {
+        width: 90%;
+    }
+}
